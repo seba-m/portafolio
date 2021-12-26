@@ -1,0 +1,29 @@
+#rotatingWords {
+    display: inline-block;
+}
+
+.typeText {
+    margin: 0;
+}
+
+.old{
+    display: none;
+}
+
+.gsapCursor.blink {
+    display: inline-block;
+    animation: 1s blinkCursor step-end infinite;
+}
+
+.gsapCursor.hide {
+    display: none;
+}
+
+@keyframes blinkCursor {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}

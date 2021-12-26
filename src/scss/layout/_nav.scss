@@ -1,7 +1,3 @@
-body{
-    background-color: #fff;
-}
-
 .menu-bar{
     background-image: linear-gradient(-90deg, #d38312, #a83279);
 }
@@ -32,6 +28,7 @@ body{
 .nav-link:hover{
     font-weight: 600;
     border-bottom: 1px solid #fff;
+    padding-bottom: 1px;
 }
 
 .navbar-brand img{
@@ -44,14 +41,4 @@ body{
     .nav-link:hover{
         border-bottom: none !important;
     }
-}
-
-#messages {
-    padding: 0 10px 0 0;
-    margin: 0;
-}
-
-#cursor {
-    margin: 0;
-    display: inline-block;
 }
