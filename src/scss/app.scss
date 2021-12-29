@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pushster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap");
+
+@import "node_modules/rfs/scss";
 
 @import "base/variables";
 @import "base/globales";
@@ -8,5 +12,7 @@
 @import "base/utilidades";
 
 @import "layout/nav";
+@import "layout/home";
 @import "layout/about";
 @import "layout/header";
+@import "layout/pagescroll";

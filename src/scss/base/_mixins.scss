@@ -1,3 +1,9 @@
+@mixin telefonoEnano {
+    @media (max-height: $telefonoEnano) {
+        @content;
+    }
+}
+
 @mixin telefono {
     @media (min-width: $telefono) {
         @content;

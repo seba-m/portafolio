@@ -26,6 +26,10 @@ var gsapTypeIt = function () {
         },
         word: "",
         cursorSign: "|",
+        cursorSignOptions: {
+            original_background: 'transparent',
+            original_color: '#000',
+        },
         autoPlay: true,
         delay: 2,
         charterPerSecond: false,
@@ -76,19 +80,20 @@ gsapTypeIt.prototype.type = function () {
         rotateWordsOptions = op.rotateWordsOptions,
         words = rotateWordsOptions.wordsList,
         wordIndex = this.wordIndex,
-        oldClass;
+        oldClass,
+        cursorOp = op.cursorSignOptions;
 
 
 
-    TweenLite.delayedCall(0, setCurstorClassName, [this.cursor, "blink"]);
-    TweenLite.delayedCall(delay, setCurstorClassName, [this.cursor, " "]);
+    TweenLite.delayedCall(0, setCursorClassName, [this.cursor, "blink", cursorOp]);
+    TweenLite.delayedCall(delay, setCursorClassName, [this.cursor, " ", cursorOp]);
 
     if (!this.options.rotateWords) {
         console.log(cps);
         if (cps) {
             duration = setCharterPerSecondDuration(word, cps);
         }
-        TweenLite.to(el, duration, { text: { value: word }, delay: delay, ease: ease, onComplete: setCurstorClassName, onCompleteParams: [this.cursor, 'blink'] });
+        TweenLite.to(el, duration, { text: { value: word }, delay: delay, ease: ease, onComplete: setCursorClassName, onCompleteParams: [this.cursor, 'blink', cursorOp] });
 
     } else {
         this.wordIndex = wordIndex;
@@ -109,18 +114,16 @@ gsapTypeIt.prototype.type = function () {
             oldClass = 'old';
         }
 
-        TweenLite.to(el, duration, { text: { value: word, oldClass: oldClass }, delay: delay, ease: ease, onComplete: this.typeRotationCompleted, onCompleteParams: [this] });
+        TweenLite.to(el, duration, { text: { value: word, oldClass: oldClass }, delay: delay, ease: ease, onComplete: this.typeRotationCompleted, onCompleteParams: [this, this.options] });
 
     }
-
-
-
-
 }
 
-gsapTypeIt.prototype.typeRotationCompleted = function (that) {
+gsapTypeIt.prototype.typeRotationCompleted = function (that, options) {
 
-    setCurstorClassName(that.cursor, 'blink');
+    var cursorOp = options.cursorSignOptions;
+
+    setCursorClassName(that.cursor, 'blink', cursorOp);
 
     if (that.wordIndex >= that.wordIndexLength - 1) {
         if (that.options.rotateWordsOptions.cycle) {
@@ -141,14 +144,16 @@ gsapTypeIt.prototype.typeRotationCompleted = function (that) {
 
     that.type(that.el);
 }
+
 gsapTypeIt.prototype.clear = function () {
     var rotateWordsOp = this.options.rotateWordsOptions;
+    var cursorOp = this.options.cursorSignOptions;
 
-    TweenLite.set(this.el, { background: rotateWordsOp.clear_background, color: 'white', delay: rotateWordsOp.clearingDuration / 2 });
-    TweenLite.delayedCall(rotateWordsOp.clearingDuration / 2, setCurstorClassName, [this.cursor, "hide"]);
+    TweenLite.set(this.el, { background: rotateWordsOp.clear_background, color: rotateWordsOp.clear_color, delay: rotateWordsOp.clearingDuration / 2 });
+    TweenLite.delayedCall(rotateWordsOp.clearingDuration / 2, setCursorClassName, [this.cursor, "hide", cursorOp]);
 
     TweenLite.set(this.el, { text: { value: "" }, background: rotateWordsOp.original_background, color: rotateWordsOp.original_color, delay: rotateWordsOp.clearingDuration });
-    TweenLite.delayedCall(rotateWordsOp.clearingDuration, setCurstorClassName, [this.cursor, "blink"]);
+    TweenLite.delayedCall(rotateWordsOp.clearingDuration, setCursorClassName, [this.cursor, "blink", cursorOp]);
 
     if (!rotateWordsOp.pause) {
         var that = this;
@@ -160,9 +165,12 @@ gsapTypeIt.prototype.clearCompleted = function () {
 
 }
 
-function setCurstorClassName(cursor, className) {
+function setCursorClassName(cursor, className, options) {
     // cursor.className = " ";
     cursor.className = "gsapCursor " + className;
+    if (options) {
+        TweenLite.set(cursor, { background: options.original_background, color: options.original_color });
+    }
 }
 
 function setCharterPerSecondDuration(word, cps) {
@@ -182,9 +190,9 @@ function buildGsapTypeIt() {
     if (this.options.elClass) {
         this.el.className = op.elClass;
     }
+
     if (op.rotateWords) {
         this.wordIndexLength = op.rotateWordsOptions.wordsList.length;
-
     }
 
     HTMLcursor = document.createElement("span");

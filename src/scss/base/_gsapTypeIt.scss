@@ -4,9 +4,10 @@
 
 .typeText {
     margin: 0;
+    color: rgb(255, 255, 255);
 }
 
-.old{
+.old {
     display: none;
 }
 
@@ -20,10 +21,11 @@
 }
 
 @keyframes blinkCursor {
-    from, to {
+    from,
+    to {
         color: transparent;
     }
     50% {
-        color: black;
+        color: white;
     }
 }

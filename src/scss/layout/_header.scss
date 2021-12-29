@@ -1,19 +1,7 @@
-/*.header {
-    &.fijo {
-        position: fixed;
-        width: 100%;
-        box-shadow: 0 0.3rem 0.4rem #444;
-    }
-}
-
-.menu-bar{
-    background-image: linear-gradient(-90deg, #d38312, #a83279);
-}
-*/
 .header {
-	color: #fff;
-	z-index: 100;
-	transition: .25s padding-top ease-in-out, .25s padding-bottom ease-in-out;
-	/*background: 0 0;*/
+    width: 100%;
+    box-shadow: 0 0.3rem 0.4rem #444;
     background-image: linear-gradient(-90deg, #d38312, #a83279);
+    position: fixed;
+    z-index:3;
 }

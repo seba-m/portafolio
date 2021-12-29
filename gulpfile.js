@@ -67,4 +67,4 @@ exports.css = css;
 exports.watchArchivo = watchArchivo;
 exports.imagenes = imagenes;
 
-exports.default = series(css, javascript, imagenes, versionWebp, watchArchivo);
+exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivo);

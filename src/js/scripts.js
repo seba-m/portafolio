@@ -1,10 +1,30 @@
-var rotating = new gsapTypeIt({
+new gsapTypeIt({
     el: document.getElementById('messages'),
     rotateWords: true,
     duration: 1.7,
     rotateWordsOptions: {
-        wordsList: ["Programmer", "Back-end Developer", "Front-end Developer", "Freelancer", "Android Developer"],
+        wordsList: ["programmer", "back-end developer", "front-end developer", "freelancer", "android developer"],
         cycle: true,
-        clear: true
+        clear: true,
+        clear_background: '#3297FD',
+        clear_color: '#fff',
+        original_background: 'transparent',
+        original_color: '#fff',
+    },
+    cursorSignOptions: {
+        original_background: 'transparent',
+        original_color: '#fff',
     }
 });
+
+new PageScroll('#pagescroll', {
+    animDuration: 500, // 2 seconds
+    easing: 'cubic-bezier(.17,.67,.83,.67)', //animation easing
+    controlColor: '#ccc', // color of navigation arrows
+    nav: [
+        document.getElementById('home'),
+        document.getElementById('about'),
+        document.getElementById('projects'),
+        document.getElementById('contact')
+    ]
+})

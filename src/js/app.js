@@ -1,24 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     scrollNav();
-
-    navegacionFija();
 });
-
-function navegacionFija() {
-
-    const barra = document.querySelector('.header');
-
-    // registrar el intersection observer
-    const observer = new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) {
-            barra.classList.remove('fijo');
-        } else {
-            barra.classList.add('fijo');
-        }
-    });
-    // elemento a observar
-    observer.observe(document.querySelector('#me'));
-}
 
 function scrollNav() {
     const enlaces = document.querySelectorAll('.navegacion-principal a');

@@ -1,0 +1,134 @@
+.bg-foto--2 {
+    background-image: url("/build/img/cruz.jpg");
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.text--about {
+    color: $blanco;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0 1rem;
+}
+
+.bg--black {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(1 1 1 / 30%);
+    padding-top: 7rem;
+}
+
+.center--top {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  Skills  */
+.skill-item {
+    margin-bottom: 1rem;
+}
+
+.skill-item h6 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: $blanco;
+}
+
+.skill-item .skill-progress {
+    background-color: #eee;
+    border-radius: 20px;
+}
+
+.skill-item .skill-progress-bar {
+    width: 0;
+    height: 4px;
+    position: relative;
+    border-radius: 20px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.skill-item .skill-progress-bar span {
+    position: absolute;
+    right: 0;
+    top: -24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: $blanco;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title h2 {
+    position: relative;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    font-size: 40px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: "Rubik", sans-serif;
+}
+.section-title h2:after {
+    /* autoprefixer: off */
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgb(165, 165, 165), rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=1);
+    /* autoprefixer: on */
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    content: "";
+    bottom: 0px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.bg-base-color {
+    background-color: #b74f53;
+}
+
+@include telefono() {
+    .skill-item {
+        margin-bottom: 2.5rem;
+    }
+    .text--about {
+        font-size: 1.7rem;
+    }
+}
+
+@include tablet() {
+    .skill-item {
+        margin-bottom: 4rem;
+    }
+    .text--about {
+        font-size: 2rem;
+        padding: 2rem 0;
+    }
+}
+
+@include telefonoEnano() {
+    .title--font {
+        @include rfs(4rem !important);
+    }
+
+    .section-title h2 {
+        @include rfs(3rem !important);
+    }
+}
