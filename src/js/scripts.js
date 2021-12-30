@@ -28,3 +28,22 @@ new PageScroll('#pagescroll', {
         document.getElementById('contact')
     ]
 })
+
+tns({
+    "container": '.my-slider',
+    "items": 1,
+    "swipeAngle": false,
+    "edgePadding": 0,
+    "responsive": {
+        "480": {
+            "items": 2
+        },
+        "768": {
+            "items": 3
+        },
+        "1200": {
+            "items": 4,
+        }
+    },
+});
+
