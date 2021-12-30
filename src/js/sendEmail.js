@@ -64,12 +64,14 @@
                                 }, 1400);
 
                             } else {
+                                console.log(msg);
                                 $('#form-message-warning').html(msg);
                                 $('#form-message-warning').fadeIn();
                                 $submit.css('display', 'none');
                             }
                         },
-                        error: function () {
+                        error: function (msg) {
+                            console.log(msg);
                             $('#form-message-warning').html("Something went wrong. Please try again.");
                             $('#form-message-warning').fadeIn();
                             $submit.css('display', 'none');
