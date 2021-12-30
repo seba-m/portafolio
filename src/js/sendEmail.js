@@ -34,6 +34,7 @@
                         type: "POST",
                         url: "https://submit-form.com/KgL45JUk",
                         data: $(form).serialize(),
+                        dataType: "json",
 
                         beforeSend: function () {
                             $submit.css('display', 'block').text(waitText);
