@@ -47,3 +47,19 @@ tns({
     },
 });
 
+tns({
+    "container": '.tech',
+    "items": 1,
+    "axis": "vertical",
+    "edgePadding": 0,
+    "speed": 300,
+    "gutter": 0,
+    "autoplay": true,
+    "autoplayHoverPause": true,
+    "autoplayTimeout": 3000,
+    "autoplayButton": null,
+    "autoplayButtonOutput": false,
+    "controls": false,
+    "swipeAngle": false,
+    "nav": false,
+});

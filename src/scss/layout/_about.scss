@@ -67,7 +67,7 @@
 
 .section-title {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .section-title h2 {
@@ -104,12 +104,38 @@
     background-color: #b74f53;
 }
 
+.text-skills {
+    text-align: center;
+    color: $blanco;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.contenedor-skills {
+    @include grid(4, 1.5rem);
+}
+
+/*.brand {
+    display: inline-block;
+}*/
+
+.brand__img {
+    /*width: 7.5rem;
+    height: auto;*/
+    width: 7.5rem; /* You can set the dimensions to whatever you want */
+    height: auto;
+}
+
 @include telefono() {
     .skill-item {
         margin-bottom: 2.5rem;
     }
     .text--about {
         font-size: 1.7rem;
+    }
+    .text-skills {
+        @include rfs(1rem !important);
     }
 }
 
@@ -120,6 +146,12 @@
     .text--about {
         font-size: 2rem;
         padding: 2rem 0;
+    }
+    .text-skills {
+        @include rfs(3rem !important);
+    }
+    .contenedor-skills {
+        @include grid(6, 1.5rem);
     }
 }
 
