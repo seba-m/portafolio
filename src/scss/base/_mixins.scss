@@ -1,5 +1,5 @@
-@mixin telefonoEnano {
-    @media (max-height: $telefonoEnano) {
+@mixin orientacion($orientacion) {
+    @media screen and (orientation: $orientacion) {
         @content;
     }
 }

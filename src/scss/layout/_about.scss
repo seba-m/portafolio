@@ -116,14 +116,8 @@
     @include grid(4, 1.5rem);
 }
 
-/*.brand {
-    display: inline-block;
-}*/
-
 .brand__img {
-    /*width: 7.5rem;
-    height: auto;*/
-    width: 7.5rem; /* You can set the dimensions to whatever you want */
+    width: 7.5rem;
     height: auto;
 }
 
@@ -152,15 +146,5 @@
     }
     .contenedor-skills {
         @include grid(6, 1.5rem);
-    }
-}
-
-@include telefonoEnano() {
-    .title--font {
-        @include rfs(4rem !important);
-    }
-
-    .section-title h2 {
-        @include rfs(3rem !important);
     }
 }

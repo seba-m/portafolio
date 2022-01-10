@@ -62,4 +62,5 @@ tns({
     "controls": false,
     "swipeAngle": false,
     "nav": false,
+    "preventScrollOnTouch": true
 });
