@@ -59,11 +59,17 @@
     margin-bottom: 0;
 }
 
-section .icons-section span {
-    padding: $separacion / 7;
+section .icons-section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    & span {
+        padding: $separacion / 7;
 
-    & .brand__img {
-        width: 5.5rem;
+        & .brand__img {
+            width: 5.5rem;
+        }
     }
 }
 
@@ -164,8 +170,10 @@ section .icons-section span {
     -o-align-items: center;
     align-items: center;
 
-    /*set max height to parent*/
-    height: 100%;
+    & .phone {
+        width: 27.5%;
+        height: auto;
+    }
 }
 
 @include tablet() {

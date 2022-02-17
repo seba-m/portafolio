@@ -61,6 +61,7 @@ function versionWebp() {
 function watchArchivo() {
     watch(paths.scss, css);
     watch(paths.js, javascript);
+    watch(paths.imagenes, imagenes);
 }
 
 exports.css = css;
