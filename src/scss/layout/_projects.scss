@@ -1,10 +1,19 @@
-.bg-foto--3 {
+.webp .bg-foto--3 {
+    background-image: url("/build/img/project.webp");
+}
+
+.no-webp .bg-foto--3 {
     background-image: url("/build/img/project.jpg");
-    position: relative;
+}
+
+.bg-foto--3 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 300px;
+    background-attachment: fixed;
+    padding: 0 0 3rem;
+    width: 100%;
+    background-color: rgb(1 1 1 / 30%);
 }
 
 .tns-controls {
@@ -50,26 +59,161 @@
     margin-bottom: 0;
 }
 
-.card--footer {
-    display: flex;
-    width: 100%;
-    height: 20%;
-    justify-content: space-between;
-    align-items: center;
+section .icons-section span {
+    padding: $separacion / 7;
+
+    & .brand__img {
+        width: 5.5rem;
+    }
+}
+
+.icon {
+    a i {
+        font-size: 2rem;
+        /*xd*/
+    }
+    .card--icon:hover {
+        cursor: pointer;
+        color: rgb(110, 245, 250);
+    }
+    .card--icon:active {
+        color: rgb(21, 163, 168);
+    }
+}
+
+.container-project {
+    @include grid(1, $separacion);
+    grid-auto-flow: dense;
+    padding: 4.5rem;
+}
+
+.container-image a img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90% !important;
+}
+
+.container-text {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
     padding: 1rem;
-    margin-top: 0;
-    .card--icons {
-        a i {
-            font-size: 2rem;
-            /*xd*/
-        }
-        .card--icon:hover {
-            cursor: pointer;
-            color: rgb(110, 245, 250);
-        }
-        .card--icon:active {
-            color: rgb(21, 163, 168);
-        }
+
+    background-color: rgb(1 1 1 / 30%);
+    border-radius: 5px;
+    text-align: center;
+
+    & * {
+        color: #fff;
+        @include rfs(2rem !important);
+    }
+}
+
+.center--div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column;
+    -moz-flex-flow: column;
+    -ms-flex-flow: column;
+    -o-flex-flow: column;
+    flex-flow: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+
+    /*vertical align*/
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+
+    /*horizontal align*/
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+}
+
+.container--src {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & * {
+        margin: 1rem;
+    }
+}
+
+.splide__slide {
+    /*center image horizontally & vertically*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*vertical align*/
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+
+    /*set max height to parent*/
+    height: 100%;
+}
+
+@include tablet() {
+    .container-image a img {
+        display: block;
+        margin: 0 auto;
+        width: 100% !important;
+    }
+    .container-text {
+        width: 90%;
+    }
+
+    .container-project {
+        padding: 5rem;
+    }
+}
+
+@include desktop() {
+    .bg-foto--3 {
+        padding: 0 0 7rem;
+    }
+
+    .container-project {
+        @include grid(2, $separacion);
+        padding: 5rem;
+    }
+
+    .container-image a img {
+        display: block;
+        margin: 0 auto;
+        max-width: 90% !important;
+    }
+
+    .container-project > .container-image {
+        grid-column: 1;
+    }
+
+    .container-project > .center--div {
+        grid-column: 2;
+    }
+
+    .container-project.reverse > .container-image {
+        grid-column: 2;
+    }
+
+    .container-project.reverse > .center--div {
+        grid-row: 1;
+        grid-column: 1;
     }
 }
 

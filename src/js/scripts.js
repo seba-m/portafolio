@@ -16,19 +16,7 @@ new gsapTypeIt({
         original_color: '#fff',
     }
 });
-
-new PageScroll('#pagescroll', {
-    animDuration: 500, // 2 seconds
-    easing: 'cubic-bezier(.17,.67,.83,.67)', //animation easing
-    controlColor: '#ccc', // color of navigation arrows
-    nav: [
-        document.getElementById('home'),
-        document.getElementById('about'),
-        document.getElementById('projects'),
-        document.getElementById('contact')
-    ]
-})
-
+/*
 tns({
     "container": '.my-slider',
     "items": 1,
@@ -46,21 +34,19 @@ tns({
         }
     },
 });
+*/
 
-tns({
-    "container": '.tech',
-    "items": 1,
-    "axis": "vertical",
-    "edgePadding": 0,
-    "speed": 300,
-    "gutter": 0,
-    "autoplay": true,
-    "autoplayHoverPause": true,
-    "autoplayTimeout": 3000,
-    "autoplayButton": null,
-    "autoplayButtonOutput": false,
-    "controls": false,
-    "swipeAngle": false,
-    "nav": false,
-    "preventScrollOnTouch": true
+Array.from(document.querySelectorAll('.splide')).forEach(elm => {
+    let splide = new Splide(elm, { type: 'fade', rewind: true, fixedHeight: '20%' });
+    splide.mount();
 });
+
+/*
+var splide = new Splide('.splide--projects', {
+    type: 'fade',
+    rewind: true,
+    fixedHeight: '20%'
+});
+
+splide.mount();
+*/

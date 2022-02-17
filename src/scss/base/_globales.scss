@@ -15,7 +15,7 @@ body {
     padding: 0;
     font-family: $fuentePrincipal;
     font-size: 1.6rem;
-    overflow-x: hidden;
+    overflow: hidden;
     &.fijar-body {
         overflow: hidden;
     }

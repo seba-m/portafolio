@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     scrollNav();
+
+    reverseGrid();
 });
+
+function reverseGrid() {
+    document.querySelectorAll(".container-project").forEach((project, index) => {
+        if (index % 2 == 0)
+            project.classList.add("reverse");
+    })
+}
 
 function scrollNav() {
     const enlaces = document.querySelectorAll('.navegacion-principal a');

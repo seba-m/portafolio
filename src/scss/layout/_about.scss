@@ -104,6 +104,15 @@
     background-color: #b74f53;
 }
 
+.list-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    align-items: center;
+}
+
 .text-skills {
     text-align: center;
     color: $blanco;
@@ -146,5 +155,15 @@
     }
     .contenedor-skills {
         @include grid(6, 1.5rem);
+    }
+}
+
+.contenedor {
+    @include tablet {
+        @include grid(2, $separacion);
+    }
+
+    .contenedor-techs {
+        padding-top: $separacion / 2;
     }
 }

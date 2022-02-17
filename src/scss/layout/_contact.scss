@@ -1,12 +1,28 @@
 .bg-foto--4 {
-    background-image: url("/build/img/contact.jpg");
     position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 300px;
+    background-color: #22313f;
 }
 
+.svg-separator {
+    display: block;
+    background: 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9;
+    -webkit-transform: translateY(-100%) translateY(2px);
+    transform: translateY(-100%) translateY(2px);
+    width: 100%;
+}
+.svg-separator.bottom {
+    top: auto;
+    bottom: 0;
+}
+.sep11 {
+    transform: translateY(-100%) translateY(2px) scale(1, 1);
+    transform-origin: top;
+}
 .form-control {
     height: 52px;
     background: transparent;
