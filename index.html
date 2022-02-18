@@ -10,12 +10,15 @@
     <link rel="icon" type="image/png" href="build/img/logo.png" />
     <link rel="preload" href="build/css/app.css" as="style">
     <link rel="preload" href="build/js/bundle.min.js" as="script">
-
     <link rel="stylesheet" href="build/vendor/css/bundle.css">
-
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
     <link rel="stylesheet" href="build/css/app.css">
+    <script type="text/javascript">
+        function onSubmit(token) {
+            document.getElementById('contactForm').submit();
+        }
+    </script>
 </head>
 
 <body>
@@ -1144,11 +1147,13 @@
                                 </div>
                                 <div class="col-12 my-3">
                                     <div class="form-group text-center">
-                                        <input type="submit" value="Send Message" class="btn btn-primary">
+                                        <button class="h-captcha btn btn-primary"
+                                            data-sitekey="0973f3b9-bd10-4405-8356-9b06296709c0"
+                                            data-callback="onSubmit">
+                                            Send Message
+                                        </button>
                                         <div class="submitting"></div>
                                     </div>
-                                </div>
-                                <div class="h-captcha text-center" data-sitekey="0973f3b9-bd10-4405-8356-9b06296709c0">
                                 </div>
                             </div>
                         </form>

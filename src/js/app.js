@@ -5,9 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     reverseGrid();
 
-    var lazyLoadInstance = new LazyLoad({
+    var lazyLoadInstance = new LazyLoad({});
 
-    });
 });
 
 function reverseGrid() {
