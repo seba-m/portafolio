@@ -20,7 +20,10 @@ const rename = require("gulp-rename");
 const paths = {
     imagenes: "src/img/**/*",
     scss: 'src/scss/**/*.scss',
-    js: "src/js/**/*.js"
+    js: "src/js/**/*.js",
+    vendorJS: "src/vendor/js/**/*.js",
+    vendorCSS: "src/vendor/css/**/*.css",
+    vendorWebFonts: "src/vendor/webfonts/**/*.*",
 }
 
 function css() {
@@ -51,6 +54,32 @@ function imagenes() {
     //.pipe(notify({ message: 'Imagen Minificada' }));
 }
 
+function vendorJS() {
+    return src(paths.vendorJS)
+        .pipe(sourcemaps.init())
+        .pipe(concat("bundle.js"))
+        .pipe(terser({
+            toplevel: true
+        }))
+        .pipe(sourcemaps.write("."))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(dest("./build/vendor/js"));
+}
+
+function vendorCSS() {
+    return src(paths.vendorCSS)
+        .pipe(sourcemaps.init())
+        .pipe(concat("bundle.css"))
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write("."))
+        .pipe(dest("./build/vendor/css"));
+}
+
+function vendorWebFonts() {
+    return src(paths.vendorWebFonts)
+        .pipe(dest("./build/vendor/webfonts"));
+}
+
 function versionWebp() {
     return src(paths.imagenes)
         .pipe(webp())
@@ -68,4 +97,4 @@ exports.css = css;
 exports.watchArchivo = watchArchivo;
 exports.imagenes = imagenes;
 
-exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivo);
+exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivo, vendorJS, vendorCSS, vendorWebFonts);
