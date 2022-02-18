@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    nav();
+
     scrollNav();
 
     reverseGrid();
@@ -24,4 +26,37 @@ function scrollNav() {
             });
         });
     });
+}
+
+function nav() {
+    document.querySelector('.toggle-nav').addEventListener('click', function () {
+        let nav = document.querySelector('.nav-pane');
+        toggleNavigation(this, nav);
+        changeLetters(this);
+    })
+}
+
+function toggleNavigation(btn, nav) {
+    btn.classList.toggle('open');
+    nav.classList.toggle('open');
+}
+
+function changeLetters(btn) {
+    var m = document.querySelector('.toggle-nav span.m');
+    var e = document.querySelector('.toggle-nav span.e');
+    var n = document.querySelector('.toggle-nav span.n');
+    var u = document.querySelector('.toggle-nav span.u');
+
+    e.classList.toggle('btn-cerrar');
+
+    if (btn.classList.contains('open')) {
+        m.textContent = "E";
+        n.textContent = "I";
+        u.textContent = "T";
+    }
+    else {
+        m.textContent = "M";
+        n.textContent = "N";
+        u.textContent = "U";
+    }
 }

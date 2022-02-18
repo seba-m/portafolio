@@ -37,7 +37,7 @@ tns({
 */
 
 Array.from(document.querySelectorAll('.splide')).forEach(elm => {
-    let splide = new Splide(elm, { type: 'fade', rewind: true, fixedHeight: '20%' });
+    let splide = new Splide(elm, { type: 'fade', rewind: true, fixedHeight: '20%', pagination: false });
     splide.mount();
 });
 
