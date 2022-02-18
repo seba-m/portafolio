@@ -8,6 +8,8 @@
     <meta name="description" content="Página web de Portafolio">
     <title>Portfolio</title>
     <link rel="icon" type="image/png" href="build/img/logo.png" />
+    <link rel="preload" href="build/css/app.css" as="style">
+    <link rel="preload" href="build/js/bundle.min.js" as="script">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -1120,37 +1122,39 @@
             <div class="row justify-content-center no-gutters">
                 <div class="col-lg-5 col-md-6 order-md-last d-flex align-items-stretch">
                     <div class="contact-wrap w-100 p-md-5 p-4">
+                        <h1 class="contact-text">Would you like to create a great project? Ask for my resume or
+                            contact me? I would like to hear what you want to tell me :)</h1>
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 my-3">
                                     <div class="form-group">
                                         <label class="label" for="name">Full Name</label>
                                         <input type="text" class="form-control" name="name" id="name"
                                             placeholder="Name">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 my-3">
                                     <div class="form-group">
                                         <label class="label" for="email">Email Address</label>
                                         <input type="email" class="form-control" name="email" id="email"
                                             placeholder="Email">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12 my-3">
                                     <div class="form-group">
                                         <label class="label" for="subject">Subject</label>
                                         <input type="text" class="form-control" name="subject" id="subject"
                                             placeholder="Subject">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12 my-3">
                                     <div class="form-group">
-                                        <label class="label" for="#">Message</label>
-                                        <textarea name="message" class="form-control" id="message" cols="30"
+                                        <label class="label" for="message">Message</label>
+                                        <textarea class="form-control mt-4" name="message" id="message" cols="30"
                                             placeholder="Message"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 my-3">
                                     <div class="form-group text-center">
                                         <input type="submit" value="Send Message" class="btn btn-primary">
                                         <div class="submitting"></div>
@@ -1163,36 +1167,29 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 order-md-last d-flex align-items-stretch">
-                    <div class="contact-wrap w-100 p-md-5 p-4">
-                        <p class="bold white-text">Feeling social? Find me on these online spaces too!</p>
-                        <div class="row justify-content-center social">
-                            <div class="col-3">
-                                <a href="https://github.com/seba-m" target="_blank"
-                                    aria-label="open link to seba morgado's github page."><i class="fab fa-github fa-2x"
-                                        aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
-                            </div>
-                            <div class="col-3">
-                                <a href="https://www.linkedin.com/in/seba-morgado/" target="_blank"
-                                    aria-label="open link to seba morgado's linkedin page."><i
-                                        class="fab fa-linkedin fa-2x" aria-hidden="true"></i><span
-                                        class="visually-hidden">Linkedin</span></a>
-                            </div>
+                    <div class="contact-wrap w-100 pt-md-5 pt-4">
+                        <h1 class="contact-text">... Or you can contact me with one of these options ;)</h1>
+                        <div class="social">
+                            <a href="https://github.com/seba-m" target="_blank"
+                                aria-label="open link to seba morgado's github page."><i class="fab fa-github fa-2x"
+                                    aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+                            <a href="https://www.linkedin.com/in/seba-morgado/" target="_blank"
+                                aria-label="open link to seba morgado's linkedin page."><i class="fab fa-linkedin fa-2x"
+                                    aria-hidden="true"></i><span class="visually-hidden">Linkedin</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/TextPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src='https://js.hcaptcha.com/1/api.js' async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
-    <script src="build/js/bundle.min.js"></script>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/TextPlugin.min.js"></script>
+<script src='https://js.hcaptcha.com/1/api.js' async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+<script src="build/js/bundle.min.js"></script>
 
 </html>

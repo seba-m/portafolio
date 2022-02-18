@@ -16,37 +16,8 @@ new gsapTypeIt({
         original_color: '#fff',
     }
 });
-/*
-tns({
-    "container": '.my-slider',
-    "items": 1,
-    "swipeAngle": false,
-    "edgePadding": 0,
-    "responsive": {
-        "480": {
-            "items": 2
-        },
-        "768": {
-            "items": 3
-        },
-        "1200": {
-            "items": 4,
-        }
-    },
-});
-*/
 
 Array.from(document.querySelectorAll('.splide')).forEach(elm => {
     let splide = new Splide(elm, { type: 'fade', rewind: true, fixedHeight: '20%', pagination: false });
     splide.mount();
 });
-
-/*
-var splide = new Splide('.splide--projects', {
-    type: 'fade',
-    rewind: true,
-    fixedHeight: '20%'
-});
-
-splide.mount();
-*/
