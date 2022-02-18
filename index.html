@@ -14,11 +14,6 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
     <link rel="stylesheet" href="build/css/app.css">
-    <script type="text/javascript">
-        function onSubmit(token) {
-            document.getElementById('contactForm').submit();
-        }
-    </script>
 </head>
 
 <body>
@@ -1147,11 +1142,7 @@
                                 </div>
                                 <div class="col-12 my-3">
                                     <div class="form-group text-center">
-                                        <button class="h-captcha btn btn-primary"
-                                            data-sitekey="0973f3b9-bd10-4405-8356-9b06296709c0"
-                                            data-callback="onSubmit">
-                                            Send Message
-                                        </button>
+                                        <input type="submit" value="Send Message" class="btn btn-primary">
                                         <div class="submitting"></div>
                                     </div>
                                 </div>
@@ -1178,7 +1169,6 @@
 
     <script src="build/vendor/js/bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/TextPlugin.min.js"></script>
-    <script src='https://js.hcaptcha.com/1/api.js' async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.1/dist/lazyload.min.js"></script>
     <script src="build/js/bundle.min.js"></script>

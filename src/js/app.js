@@ -1,3 +1,5 @@
+var captchaButton = false;
+
 document.addEventListener('DOMContentLoaded', function () {
     nav();
 
