@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollNav();
 
     reverseGrid();
+
+    var lazyLoadInstance = new LazyLoad({
+
+    });
 });
 
 function reverseGrid() {
